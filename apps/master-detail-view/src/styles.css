@@ -12,7 +12,7 @@ mat-card:not(.dashboard-card) {
     margin-bottom: 20px;
 }
 
-.mat-button{
+.nav-link{
     width: 100%;
 }
 

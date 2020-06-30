@@ -6,10 +6,11 @@ import { MaterialModule } from '@workshop/material';
 import { AppRoutingModule } from './app-routing.module';
 import { UiLoginModule } from '@workshop/ui-login';
 import { NxModule } from '@nrwl/nx';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, NxModule.forRoot(), BrowserAnimationsModule, MaterialModule, UiLoginModule, AppRoutingModule,],
+  imports: [BrowserModule, NxModule.forRoot(), BrowserAnimationsModule, MaterialModule, UiLoginModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent], 
 })

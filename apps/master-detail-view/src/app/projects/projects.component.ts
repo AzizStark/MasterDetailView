@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProjectsService, Project } from '@workshop/core-data';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'angular-core-workshop-projects',
@@ -8,36 +10,21 @@ import { Component, OnInit } from '@angular/core';
   
 export class ProjectsComponent implements OnInit {
   primaryColor = "#456456"
-  projects = [
-    {
-      id: '1',
-      title: 'Project One',
-      details: 'This is a sample project',
-      percentComplete: 20,
-      approved: false,
-    },
-    {
-      id: '2',
-      title: 'Project Two',
-      details: 'This is a sample project',
-      percentComplete: 40,
-      approved: false,
-    },
-    {
-      id: '3',
-      title: 'Project Three',
-      details: 'This is a sample project',
-      percentComplete: 100,
-      approved: true,
-    }
-  ];
+  projects$;
 
   //like state
-  selectedProject;
+  selectedProject: Project;
 
-  constructor() { } 
+  constructor(private projectsService: ProjectsService) { } 
 
   ngOnInit(): void {
+    //safe place to gather async data from remote server
+    this.getProjects()
+  }
+
+  getProjects ()  {
+    this.projects$ = this.projectsService.allProjects()
+    //this.projectsService.allProjects().subscribe((result: any) => this.projects = result)
   }
 
   selectProject = (project) => {
