@@ -7,10 +7,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { UiLoginModule } from '@workshop/ui-login';
 import { NxModule } from '@nrwl/nx';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, NxModule.forRoot(), BrowserAnimationsModule, MaterialModule, UiLoginModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, NxModule.forRoot(), BrowserAnimationsModule, MaterialModule, UiLoginModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent], 
 })
